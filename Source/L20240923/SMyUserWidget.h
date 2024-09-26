@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
+#include "MyCustomStruct.h"
 #include "SMyUserWidget.generated.h"
-
 /**
  * 
  */
@@ -43,6 +43,24 @@ public:
 
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* TextBlock_Timer;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Information")
+	FMyCustomStruct MyLevelStruct;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Information")
+	FMyCustomStruct MySwitchStruct;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Information")
+	FMyCustomStruct FReciveTimeStruct;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Information")
+	FMyCustomStruct FSeverityStruct;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Information")
+	FMyCustomStruct FEventIdStruct;
+
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	FText GetInformation() const;
 
 	UFUNCTION(BlueprintCallable, Category = "DateTime")
 	FText GetCurrentDateTime() const;

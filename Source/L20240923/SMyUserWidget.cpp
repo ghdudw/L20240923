@@ -81,6 +81,11 @@ void USMyUserWidget::UpdateDateTime()
 
 }
 
+FText USMyUserWidget::GetInformation() const
+{
+    return FText::FromString(MyLevelStruct.MyLevelStruct.DataType);
+}
+
 FText USMyUserWidget::GetCurrentDateTime() const
 {
     FDateTime Now = FDateTime::Now();
